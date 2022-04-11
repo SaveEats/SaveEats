@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native'
 import { auth } from '../firebase'
 
 const LoginScreen = () => {
@@ -40,10 +40,35 @@ const LoginScreen = () => {
   }
 
   return (
+    
     <KeyboardAvoidingView
         style={styles.container}
         behavior="padding"
     >
+      <View
+        style={{marginLeft:15}}
+        >
+
+        <Image
+        style={{position:'relative',marginTop:12}}
+        source={require('../assets/images/Home.png')}
+        />
+        <Image
+        style={{position:'absolute',marginTop:90,marginLeft:40}}
+        source={require('../assets/images/grupo3.png')}
+        />
+      </View>
+      <View>
+          <Text
+          style={{fontSize:33,textAlign:'center',color:'#F35B04'}}
+          >Olá!</Text>
+          <Text
+          style={{marginLeft:9,marginBottom:40,color:'#1297A6'}}
+          >
+              Seja bem vindo ao Save Eats, o aplicativo que permite 
+              que voce economize enquanto previne desperdício
+          </Text> 
+      </View>
       <View style={styles.inputContainer}>
         <TextInput
             placeholder="Email"
@@ -71,8 +96,30 @@ const LoginScreen = () => {
            onPress={handleSignUp}
            style={[styles.button, styles.buttonOutline]}
         >
-            <Text style={styles.buttonOutlineText}>Register</Text>
+            <Text style={styles.buttonOutlineText}>Registrar</Text>
         </TouchableOpacity>
+      </View>
+      <View>
+        <Text
+        style={{textAlign:'center',marginTop:50}}
+        >Quero acessar com minhas redes sociais</Text>
+        <View 
+          style={{flexDirection:'row',justifyContent:'center',marginTop:20,marginBottom:20}}
+          >
+          <TouchableOpacity>
+            <Image
+            source={require('../assets/images/gol.png')}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={{marginLeft:30}}
+          >
+            <Image
+            source={require('../assets/images/Facbook.png')}
+            />
+          </TouchableOpacity>
+        </View>
       </View>
     </KeyboardAvoidingView>
   )
@@ -94,7 +141,7 @@ const styles = StyleSheet.create({
       paddingHorizontal: 15,
       paddingVertical: 10,
       borderRadius: 10,
-      marginTop: 5,
+      marginTop: 10,
     },
     buttonContainer: {
       width: '60%',
@@ -103,7 +150,7 @@ const styles = StyleSheet.create({
       marginTop: 40,
     },
     button: {
-      backgroundColor: '#0782F9',
+      backgroundColor: '#F35B04',
       width: '100%',
       padding: 15,
       borderRadius: 10,
@@ -117,11 +164,11 @@ const styles = StyleSheet.create({
     buttonOutline: {
       backgroundColor: 'white',
       marginTop: 5,
-      borderColor: '#0782F9',
+      borderColor: '#F35B04',
       borderWidth: 2,
     },
     buttonOutlineText: {
-      color: '#0782F9',
+      color: '#F35B04',
       fontWeight: '700',
       fontSize: 16,
     },
