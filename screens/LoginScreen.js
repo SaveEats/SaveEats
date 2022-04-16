@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native'
 import { auth } from '../firebase'
 
-const LoginScreen = () => {
+export default function LoginScreen({navigation}) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const navigation = useNavigation()
+  navigation = useNavigation()
 
   useEffect(() => {
     const unsubiscribe = auth.onAuthStateChanged(user => {
@@ -124,8 +124,6 @@ const LoginScreen = () => {
     </KeyboardAvoidingView>
   )
 }
-
-export default LoginScreen
 
 const styles = StyleSheet.create({
     container: {
