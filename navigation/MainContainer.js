@@ -51,7 +51,7 @@ export default function MainContainer(){
 				
 				<Tab.Screen options={{ headerShown: false }} name={homeName} component={HomeScreen}/>
 				<Tab.Screen name={searchName} component={SearchScreen}/>
-				<Tab.Screen name={addPostName} size={"large"} component={AddPostScreen}/>
+				<Tab.Screen options={{ headerShown: false }} name={addPostName} size={"large"} component={AddPostScreen}/>
 				<Tab.Screen name={notificationName} component={NotificationScreen}/>
 				<Tab.Screen name={userName} component={UserScreen}/>
 
