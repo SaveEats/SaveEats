@@ -3,7 +3,7 @@ import React from 'react'
 import { auth } from '../firebase'
 import { useNavigation } from '@react-navigation/native'
 
-export default function HomeScreen({navigation}) {
+export default function UserScreen({navigation}) {
   navigation = useNavigation()
 
   const handleSignOut = () => {
