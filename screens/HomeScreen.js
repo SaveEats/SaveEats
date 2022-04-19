@@ -1,10 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image,TouchableOpacity, ScrollView} from 'react-native';
-import { useNavigation } from '@react-navigation/native'
-import FeedScreen from './FeedScreen'
+// import { useNavigation } from '@react-navigation/native'
 
 export default function HomeScreen({navigation}) {
-    navigation = useNavigation()
     return (
       <View>
         <View style={estilo.view1}>
@@ -30,7 +28,7 @@ export default function HomeScreen({navigation}) {
               <Text style={estilo.text4}>Categoria</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity >
+            <TouchableOpacity onPress={()=>navigation.navigate("Feed")} >
               <Text style={estilo.text5}>Feed</Text>
             </TouchableOpacity>
 

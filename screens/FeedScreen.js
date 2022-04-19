@@ -1,11 +1,10 @@
 import React from "react";
 
 import { View, Text, StyleSheet,Image, TouchableOpacity, ScrollView } from "react-native";
-import { useNavigation } from '@react-navigation/native'
+// import { useNavigation } from '@react-navigation/native'
 
 
-export default function FeedScreen({navigation}){
-    navigation = useNavigation()
+const FeedScreen = ({navigation}) =>{
     return(
         <View>
             <View style={estilo.view1}>
@@ -23,7 +22,7 @@ export default function FeedScreen({navigation}){
 
             <View style={estilo.view2}>
                 
-                <TouchableOpacity style={estilo.touch1}>
+                <TouchableOpacity style={estilo.touch1} onPress={()=>navigation.navigate("Home")}>
                 <Text style={estilo.text4}>Categorias</Text>
                 </TouchableOpacity>
 
@@ -165,6 +164,8 @@ export default function FeedScreen({navigation}){
 
 
 }
+
+export default FeedScreen
 
 
 const estilo = StyleSheet.create({
